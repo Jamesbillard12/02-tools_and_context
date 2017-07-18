@@ -16,12 +16,13 @@ describe('fp', () => {
   })
   describe('#filter', () =>{
     it('should throw array not provided error', () => {
-      let filterArrErr = fp.map;
+      let filterArrErr = fp.filter;
       expect(filterArrErr).to.throw(Error);
     })
     it('should return an array that is missing the number 2', () => {
-      let validFilter = filter([1, 2, 3, 4], function(n) { return n !== 2 });
-      expect(validFilter)
+      let validFilter = fp.filter([1, 2, 3, 4], (n) => { return n !== 2 });
+      expect(validFilter).to.be.an('array').to.not.have.members([2]);
     })
   })
+  describe('#concat', () =>)
 })
