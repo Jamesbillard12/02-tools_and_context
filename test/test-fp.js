@@ -24,5 +24,14 @@ describe('fp', () => {
       expect(validFilter).to.be.an('array').to.not.have.members([2]);
     })
   })
-  describe('#concat', () =>)
+  describe('#concat', () => {
+    it('should throw an intial array not provided error', () => {
+      let concatArrErr = fp.concat;
+      expect(concatArrErr).to.throw(Error);
+    })
+    it('should be an array the is a combination of two arrays', () => {
+      let validConcat = fp.concat([1,2,3], [4,5,6]);
+      expect(validConcat).to.be.an('array').to.include.members([1,2,3,4,5,6])
+    })
+  })
 })
