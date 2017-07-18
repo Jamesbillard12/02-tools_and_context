@@ -59,4 +59,14 @@ describe('fp', () => {
       expect(validNameReduce).to.be.an('object');
     })
   })
+  describe('#splice', () => {
+    it('should throw an intial array not provided error', () =>{
+      let spliceArrErr = fp.concat;
+      expect(spliceArrErr).to.throw(Error);
+    })
+    it('should insert a value into a specific position in an array', () =>{
+      let validsplice = fp.splice([1, 2, 3, 4, 5], 2, 0, 25);
+      expect(validsplice).to.be.an('array').to.include.members([1, 2, 25, 3, 4, 5]);
+    })
+  })
 })
