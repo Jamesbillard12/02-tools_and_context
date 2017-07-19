@@ -41,7 +41,6 @@ describe('fp', () => {
     })
     it('should reduce an array down to a single value', () => {
       let validReduce = fp.reduce([0, 1, 2, 3], (acc, n) => {return acc + n }, 0);
-      console.log(validReduce);
       expect(validReduce).to.equal(6);
     })
     it('should count amount of each name in an array and return it in an object', () => {
@@ -55,7 +54,6 @@ describe('fp', () => {
         }
         return allNames;
       }, {});
-      console.log(validNameReduce);
       expect(validNameReduce).to.be.an('object');
     })
   })
@@ -66,7 +64,6 @@ describe('fp', () => {
     })
     it('should return [6,7,8]', () => {
       let result = fp.splice([1,2,3,4,5,6,7,8], 5);
-      console.log(result);
       expect(result).to.be.an('array').to.include.members([6,7,8])
     })
   })

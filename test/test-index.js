@@ -1,6 +1,6 @@
 'use strict';
 
-const expect = require('expect');
+const expect = require('chai').expect;
 const main = require('../index.js');
 
 describe('testing main', () => {
@@ -21,6 +21,6 @@ describe('testing main', () => {
 
   it('should return \'HELLO WORLD\'', () => {
     let result = main();
-    expect(result).toBe('HELLO WORLD');
+    expect(result).to.be.a('string').to.have.string('HELLO WORLD');
   });
 });
