@@ -73,5 +73,9 @@ describe('fp', () => {
 })
 
 describe('index', () => {
-  describe('#toCaps')
+  describe('#toCaps', () =>{
+    it('should make all imput in command line capitalized', ()=>{
+      let toCapsValid = 
+    })
+  })
 })
