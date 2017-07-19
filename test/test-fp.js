@@ -1,6 +1,7 @@
 'use strict';
 
 const fp = require('../lib/fp.js');
+const index = require('../index.js')
 const expect = require('chai').expect;
 
 describe('fp', () => {
@@ -69,4 +70,8 @@ describe('fp', () => {
       expect(validsplice).to.be.an('array').to.include.members([1, 2, 25, 3, 4, 5]);
     })
   })
+})
+
+describe('index', () => {
+  describe('#toCaps')
 })
