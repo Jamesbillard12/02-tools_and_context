@@ -10,7 +10,7 @@ describe('fp', () => {
       expect(mapArrErr).to.throw(Error);
     });
     it('should return an array with doubled numbers', () => {
-      let validMap = fp.map([1,2,3,4], (n) => { return n * 2 });
+      let validMap = fp.map([1,2,3,4], (n) => { return n * 2; });
       expect(validMap).to.be.an('array').that.includes.members([2,4,6,8]);
     });
   });
@@ -20,7 +20,7 @@ describe('fp', () => {
       expect(filterArrErr).to.throw(Error);
     });
     it('should return an array that is missing the number 2', () => {
-      let validFilter = fp.filter([1, 2, 3, 4], (n) => { return n !== 2 });
+      let validFilter = fp.filter([1, 2, 3, 4], (n) => { return n !== 2; });
       expect(validFilter).to.be.an('array').to.not.have.members([2]);
     });
   });
@@ -31,7 +31,7 @@ describe('fp', () => {
     });
     it('should be an array the is a combination of two arrays', () => {
       let validConcat = fp.concat([1,2,3], [4,5,6]);
-      expect(validConcat).to.be.an('array').to.include.members([1,2,3,4,5,6])
+      expect(validConcat).to.be.an('array').to.include.members([1,2,3,4,5,6]);
     });
   });
   describe('#reduce', () =>{
@@ -40,7 +40,7 @@ describe('fp', () => {
       expect(reduceArrErr).to.throw(Error);
     });
     it('should reduce an array down to a single value', () => {
-      let validReduce = fp.reduce([0, 1, 2, 3], (acc, n) => {return acc + n }, 0);
+      let validReduce = fp.reduce([0, 1, 2, 3], (acc, n) => {return acc + n; }, 0);
       expect(validReduce).to.equal(6);
     });
     it('should count amount of each name in an array and return it in an object', () => {
@@ -64,7 +64,7 @@ describe('fp', () => {
     });
     it('should return [6,7,8]', () => {
       let result = fp.splice([1,2,3,4,5,6,7,8], 5);
-      expect(result).to.be.an('array').to.include.members([6,7,8])
+      expect(result).to.be.an('array').to.include.members([6,7,8]);
     });
   });
-})
+});
