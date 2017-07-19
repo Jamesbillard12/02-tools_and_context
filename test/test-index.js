@@ -3,15 +3,13 @@
 const expect = require('chai').expect;
 const main = require('../index.js');
 
-describe('testing main', () => {
-
-  var oldArgv = process.argv;
+describe('main', () => {var oldArgv = process.argv;
   before(() => {
     process.argv = [
       'node path',
       'file path',
-      'hello',
-      'world',
+      'cat',
+      'dog',
     ];
   });
 
@@ -19,8 +17,8 @@ describe('testing main', () => {
     process.argv = oldArgv;
   });
 
-  it('should return \'HELLO WORLD\'', () => {
+  it('should return \'CAT DOG\'', () => {
     let result = main();
-    expect(result).to.be.a('string').to.have.string('HELLO WORLD');
+    expect(result).to.be.a('string').to.have.string('CAT DOG');
   });
 });
