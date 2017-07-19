@@ -74,8 +74,9 @@ describe('fp', () => {
 
 describe('index', () => {
   describe('#toCaps', () =>{
-    it('should make all imput in command line capitalized', ()=>{
-      let toCapsValid = 
+    it('should make all imputs in command line capitalized', () => {
+      let toCapsValid = index.toCapsTerminal('dog');
+      expect(toCapsValid).to.be.an('array');
     })
   })
 })
