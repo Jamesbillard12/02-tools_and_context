@@ -1,7 +1,6 @@
 'use strict';
 
 const fp = require('../lib/fp.js');
-const index = require('../index.js')
 const expect = require('chai').expect;
 
 describe('fp', () => {
@@ -65,18 +64,10 @@ describe('fp', () => {
       let spliceArrErr = fp.concat;
       expect(spliceArrErr).to.throw(Error);
     })
-    it('should insert a value into a specific position in an array', () =>{
-      let validsplice = fp.splice([1, 2, 3, 4, 5], 2, 0, 25);
-      expect(validsplice).to.be.an('array').to.include.members([1, 2, 25, 3, 4, 5]);
-    })
-  })
-})
-
-describe('index', () => {
-  describe('#toCaps', () =>{
-    it('should make all imputs in command line capitalized', () => {
-      let toCapsValid = index.toCapsTerminal('dog');
-      expect(toCapsValid).to.be.an('array');
+    it('should return [6,7,8]', () => {
+      let result = fp.splice([1,2,3,4,5,6,7,8], 5);
+      console.log(result);
+      expect(result).to.be.an('array').to.include.members([6,7,8])
     })
   })
 })

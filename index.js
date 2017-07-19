@@ -1,14 +1,14 @@
 'use strict';
 
-const fp = require('/Users/jamesrbillard/programs/code_fellows/code_401/lab-james/02-tools_and_context/lib/fp.js');
+const fp = require('./lib/fp.js');
 
-
-var toCapsTerminal = () => {
-  let toCaps = fp.map(process.argv, (n) => {
-    toCaps.splice(0,2);
-    return n.toUpperCase()
-  });
-  console.log(`this is just dog ${toCaps}`);
+let main = module.exports = () => {
+  let list = fp.splice(process.argv, 2);
+  console.log(list);
+  list = fp.map(list, (word) => word.toUpperCase());
+  let result = list.join(' ');
+  console.log(result);
+  return result;
 };
 
-toCapsTerminal()
+main();
